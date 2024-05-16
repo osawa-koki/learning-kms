@@ -1,0 +1,16 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: "learning-kms"
+
+Resources:
+  KMSKey:
+    Type: "AWS::KMS::Key"
+    Properties:
+      Description: !Sub "${AWS::StackName} KMS Key"
+      Enabled: true
+      EnableKeyRotation: false
+      KeySpec: "SYMMETRIC_DEFAULT"
+
+Outputs:
+  KMSKeyArn:
+    Description: "KMS Key Arn"
+    Value: !GetAtt KMSKey.Arn

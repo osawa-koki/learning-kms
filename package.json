@@ -6,5 +6,23 @@
   "repository": "https://github.com/osawa-koki/learning-kms.git",
   "author": "osawa-koki <koki@osawa.dev>",
   "license": "Apache-2.0",
-  "private": true
+  "private": true,
+  "engines": {
+    "node": ">=20.0.0",
+    "yarn": ">=1.22.0"
+  },
+  "scripts": {
+    "dev": "node -r esbuild-register ./src/index.ts",
+    "build": "esbuild ./src/index.ts --bundle --platform=node --outfile=./dist/index.js",
+    "start": "node ./dist/index.js"
+  },
+  "dependencies": {
+    "@aws-sdk/client-kms": "^3.577.0",
+    "@types/node": "^20.12.12",
+    "dotenv": "^16.4.5",
+    "esbuild": "^0.21.3",
+    "esbuild-register": "^3.5.0",
+    "typescript": "^5.4.5"
+  },
+  "devDependencies": {}
 }

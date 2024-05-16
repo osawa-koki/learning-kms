@@ -9,6 +9,12 @@ Resources:
       Enabled: true
       EnableKeyRotation: false
       KeySpec: "SYMMETRIC_DEFAULT"
+      KeyUsage: "ENCRYPT_DECRYPT"
+  KMSKeyAlias:
+    Type: "AWS::KMS::Alias"
+    Properties:
+      AliasName: !Sub "alias/${AWS::StackName}"
+      TargetKeyId: !Ref KMSKey
 
 Outputs:
   KMSKeyArn:

@@ -35,4 +35,7 @@ const plaintextBin = Buffer.from(plaintext, 'utf-8');
   }
 })()
 .then(() => console.log('Done!'))
-.catch((err) => console.error(err))
+.catch((err) => {
+  console.error(err)
+  process.exit(1)
+})

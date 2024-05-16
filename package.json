@@ -1,0 +1,10 @@
+{
+  "name": "learning-kms",
+  "version": "1.0.0",
+  "description": "🕴🕴🕴 KMSを使って暗号化・復号処理を実装してみる！",
+  "main": "./src/index.ts",
+  "repository": "https://github.com/osawa-koki/learning-kms.git",
+  "author": "osawa-koki <koki@osawa.dev>",
+  "license": "Apache-2.0",
+  "private": true
+}

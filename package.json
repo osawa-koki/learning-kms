@@ -18,6 +18,8 @@
   },
   "dependencies": {
     "@aws-sdk/client-kms": "^3.577.0",
+    "@types/node": "^20.12.12",
+    "dotenv": "^16.4.5",
     "esbuild": "^0.21.3",
     "esbuild-register": "^3.5.0",
     "typescript": "^5.4.5"

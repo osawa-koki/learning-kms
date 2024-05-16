@@ -43,6 +43,13 @@ jobs:
           path: ./node_modules/
           key: ${{ runner.os }}-nextjs-${{ hashFiles('**/yarn.lock') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
           restore-keys: ${{ runner.os }}-nextjs-${{ hashFiles('**/yarn.lock') }}-
+      - name: Configure AWS credentials
+        id: creds
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
       - name: Create dotenv
         run: |
           echo "KMS_KEY_ID=$(aws cloudformation describe-stacks --stack-name learning-kms --query "Stacks[].Outputs[?OutputKey=='KMSKeyArn'].OutputValue" --output text --no-cli-pager)" >> ./.env
